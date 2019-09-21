@@ -1,0 +1,27 @@
+digraph a {
+    "Invoke-RestMethod" -> "InvokeRestMethodCommand"
+    "InvokeRestMethodCommand" -> "WebRequestPSCmlet"
+    "WebRequestPSCmlet" -> "ProcessRecord()"
+    node[group="ProcessRecord()"]
+    "ProcessRecord()" -> "InvokeRestMethodCommand"
+    "InvokeRestMethodCommand"->"ProcessResponse()"
+    "ProcessResponse()"->"TryProcessFeedStream()"
+    "TryProcessFeedStream()"->"WriteObject()"
+    "ProcessResponse()"->"CheckReturnType()"
+    "ProcessResponse()"->"StreamHelper.TryGetEncoding()"
+    "ProcessResponse()"->"StreamHelper.DecodeStream()"
+    "ProcessResponse()"->"TryConvertToJson()"
+    "ProcessResponse()"->"TryConvertToXml()"
+    "ProcessResponse()"->"Raw String"
+    "TryConvertToJson()"->"WriteObject()"
+    "TryConvertToXml()"->"WriteObject()"
+    "Raw String"->"WriteObject()"
+    edge[style=invis];
+    "ProcessRecord()" ->"ProcessResponse()"
+    "TryProcessFeedStream()"->"CheckReturnType()"
+    "CheckReturnType()"->"StreamHelper.TryGetEncoding()"
+    "StreamHelper.TryGetEncoding()"->"StreamHelper.DecodeStream()"
+    "StreamHelper.DecodeStream()"->"TryConvertToJson()"
+    "StreamHelper.DecodeStream()"->"TryConvertToXml()"
+    "TryConvertToJson()"->"TryConvertToXml()"->"Raw String"
+}

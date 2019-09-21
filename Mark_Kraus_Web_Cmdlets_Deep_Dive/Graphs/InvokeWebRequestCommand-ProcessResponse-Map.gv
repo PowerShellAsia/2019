@@ -1,0 +1,28 @@
+digraph a {
+    "Invoke-WebRequest" -> "InvokeWebRequestCommand"
+    "InvokeWebRequestCommand" -> "WebRequestPSCmlet"
+    "WebRequestPSCmlet" -> "ProcessRecord()"
+    node[group="ProcessRecord()"]
+    "ProcessRecord()" -> "InvokeWebRequestCommand"
+    "InvokeWebRequestCommand"->"ProcessResponse()"
+    "ProcessResponse()"->"StreamHelper.GetResponseStream()"
+    "ProcessResponse()"->"WebResponseContentMemoryStream"
+    "ProcessResponse()"->"WebResponseObjectFactory.GetResponseObject()"
+    "WebResponseObjectFactory.GetResponseObject()"->"WebResponseHelper.IsText()"
+    "True"->"BasicHtmlWebResponseObject"
+    "WebResponseHelper.IsText()"->"True"
+    "WebResponseHelper.IsText()"->"False"
+    "BasicHtmlWebResponseObject"->"EnsureHtmlParser()"
+    "BasicHtmlWebResponseObject"->"InitializeContent()"
+    "BasicHtmlWebResponseObject"->"InitializeRawContent()"
+    "False"->"WebResponseObject"
+    "WebResponseObject"->"SetResponse()"
+    "WebResponseObject"->"InitializeContent()"
+    "WebResponseObject"->"InitializeRawContent()"
+    
+    edge[style=invis];
+    "ProcessRecord()" ->"ProcessResponse()"
+    "StreamHelper.GetResponseStream()"->"WebResponseContentMemoryStream"
+    "WebResponseContentMemoryStream"->"WebResponseObjectFactory.GetResponseObject()"
+    "SetResponse()"->"EnsureHtmlParser()"->"InitializeContent()"->"InitializeRawContent()"
+}

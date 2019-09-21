@@ -1,0 +1,7 @@
+digraph WebCmdlets {
+    PSCmdlet -> WebRequestPSCmdlet
+    WebRequestPSCmdlet -> InvokeRestMethodCommand
+    WebRequestPSCmdlet -> InvokeWebRequestCommand
+    InvokeRestMethodCommand -> "Invoke-RestMethod"
+    InvokeWebRequestCommand -> "Invoke-WebRequest"
+}
