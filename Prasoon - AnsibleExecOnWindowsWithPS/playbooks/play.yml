@@ -1,0 +1,15 @@
+---
+- hosts: win20191
+  gather_facts: false
+  tasks:
+  - name:
+    win_auto_logon:
+      user: ansible
+      password: P0wer$hell1
+      state: present
+    register: output
+
+
+  - debug:
+      msg: "{{output}}"
+      # verbosity: 2
