@@ -4,4 +4,4 @@ This contains the presentation material of Jaap Brasser's session at the PowerSh
 
 ## Mastering VSCode - The modern tool for next-gen engineer
 
-[Mastering VSCode - The modern tool for next-gen engineer]("Mastering VSCode - The modern tool for next-gen engineer/Mastering VSCode - The modern tool for next-gen engineer.pdf)
+[Mastering VSCode - The modern tool for next-gen engineer](./Mastering VSCode - The modern tool for next-gen engineer/Mastering VSCode - The modern tool for next-gen engineer.pdf)
