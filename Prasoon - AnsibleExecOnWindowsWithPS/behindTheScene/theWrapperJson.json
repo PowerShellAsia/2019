@@ -1,0 +1,48 @@
+{
+    "encoded_output": false,
+    "module_powershell_wrapper": "modulePowershellWapper.ps1",
+    "min_os_version": null,
+    "powershell_modules": {
+        "Ansible.ModuleUtils.AddType": "ansibleModuleUtilsAddType.ps1",
+        "Ansible.ModuleUtils.Legacy": "ansibleModuleLegacy.ps1"
+    },
+    "module_entry": "moduleEntry.ps1",
+    "csharp_utils": {
+        "Ansible.Basic": "ansibleBasic.cs"
+    },
+    "actions": [
+        "module_powershell_wrapper.ps1"
+    ],
+    "environment": {},
+    "module_wrapper": "moduleWrapper.ps1",
+    "csharp_utils_module": [
+        "Ansible.Basic"
+    ],
+    "min_ps_version": null,
+    "module_args": {
+        "_ansible_remote_tmp": "%TEMP%",
+        "_ansible_module_name": "win_auto_logon",
+        "_ansible_check_mode": false,
+        "_ansible_shell_executable": "/bin/sh",
+        "_ansible_verbosity": 0,
+        "_ansible_no_log": false,
+        "_ansible_version": "2.8.0",
+        "state": "present",
+        "_ansible_debug": false,
+        "_ansible_tmpdir": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\ansible-tmp-1565713931.9065413-40188632475470",
+        "password": "P0wer$hell1",
+        "_ansible_keep_remote_files": true,
+        "user": "ansible",
+        "_ansible_selinux_special_fs": [
+            "fuse",
+            "nfs",
+            "vboxsf",
+            "ramfs",
+            "9p"
+        ],
+        "_ansible_syslog_facility": "LOG_USER",
+        "_ansible_string_conversion_action": "warn",
+        "_ansible_socket": null,
+        "_ansible_diff": false
+    }
+}
